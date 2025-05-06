@@ -11,5 +11,13 @@ export default defineConfig({
         manualChunks: undefined
       }
     }
+  },
+  server: {
+    host: true,
+    port: 3000
+  },
+  preview: {
+    port: 3000,
+    host: true
   }
 })

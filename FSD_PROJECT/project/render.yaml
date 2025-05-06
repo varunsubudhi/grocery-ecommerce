@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: grocery-ecommerce-frontend
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm run preview
+    envVars:
+      - key: VITE_API_URL
+        value: https://grocery-ecommerce-backend.onrender.com/api
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html 
