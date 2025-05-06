@@ -9,8 +9,13 @@ const orderRoutes = require('./routes/orderRoutes');
 const app = express();
 
 // Middleware
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://grocery-ecommerce-nsux.onrender.com', // your frontend Render domain
+];
+
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://*.onrender.com'],
+  origin: true,
   credentials: true
 }));
 app.use(express.json());
